@@ -1,11 +1,10 @@
-/* Import fonts */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@300;400;600&display=swap');
 
-/* Reset and global styling */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -22,7 +21,6 @@ body {
   padding: 0 20px;
 }
 
-/* Header */
 header {
   display: flex;
   justify-content: space-between;
@@ -35,10 +33,20 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
+  transition: background 0.4s ease-in-out;
+}
+
+header:hover {
+  background: linear-gradient(90deg, #00b4db, #0083b0);
 }
 
 header h1 {
   font-size: 28px;
+  transition: transform 0.3s ease;
+}
+
+header h1:hover {
+  transform: scale(1.1);
 }
 
 nav ul {
@@ -51,32 +59,39 @@ nav a {
   color: white;
   text-decoration: none;
   font-size: 16px;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 nav a:hover {
   color: #222;
   text-decoration: underline;
+  transform: scale(1.1);
 }
 
-/* Home Section */
 #home {
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
-  padding: 60px 0;
+  padding: 80px 0;
   background-color: #ffffffcc;
   align-items: center;
+  justify-content: center;
+  animation: fadeIn 1.2s ease-in-out;
 }
 
 #home h1 {
-  font-size: 30px;
+  font-size: 36px;
   color: #333;
   margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+#home h1:hover {
+  transform: scale(1.05);
 }
 
 .Summary {
-  font-size: 16px;
+  font-size: 18px;
   color: #444;
   max-width: 600px;
   text-align: justify;
@@ -84,37 +99,41 @@ nav a:hover {
 
 .btn {
   margin-top: 20px;
-  padding: 12px 24px;
+  padding: 14px 28px;
   background: linear-gradient(to right, #00c6ff, #0072ff);
   color: white;
   border: none;
   border-radius: 8px;
   font-size: 16px;
   cursor: pointer;
-  transition: transform 0.2s ease, background 0.3s;
+  transition: all 0.3s ease;
 }
 
 .btn:hover {
-  transform: translateY(-2px);
+  transform: scale(1.1);
   background: linear-gradient(to right, #0072ff, #00c6ff);
 }
 
 .box img {
-  width: 280px;
+  width: 300px;
   height: auto;
   border-radius: 12px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  transition: transform 0.5s ease;
 }
 
-/* Projects Section */
+.box img:hover {
+  transform: scale(1.08);
+}
+
 #projects {
   background: #f4f6f8;
-  padding: 60px 0;
+  padding: 80px 20px;
   text-align: center;
 }
 
 .projects-heading {
-  font-size: 32px;
+  font-size: 36px;
   margin-bottom: 40px;
   color: #2c3e50;
 }
@@ -136,11 +155,12 @@ nav a:hover {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: transform 0.3s;
+  transition: transform 0.4s ease, box-shadow 0.4s;
 }
 
 .project-card:hover {
-  transform: scale(1.05);
+  transform: scale(1.08);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
 }
 
 .project-card h3 {
@@ -152,17 +172,21 @@ nav a:hover {
   color: #00bcd4;
   font-weight: bold;
   text-decoration: none;
+  transition: color 0.3s;
 }
 
-/* Services Section */
+.project-card a:hover {
+  color: #008cba;
+}
+
 #services {
   background: #ffe0e0;
-  padding: 60px 20px;
+  padding: 80px 20px;
   text-align: center;
 }
 
 .services-heading {
-  font-size: 32px;
+  font-size: 36px;
   margin-bottom: 40px;
   color: #444;
 }
@@ -174,38 +198,49 @@ nav a:hover {
   gap: 40px;
 }
 
-.services-image img {
-  width: 300px;
-  border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+.service-card {
+  background: #fff;
+  border-radius: 25px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  width: 280px;
+  padding: 25px;
+  text-align: center;
+  transition: all 0.4s ease-in-out;
 }
 
-.services-list ul {
-  font-size: 20px;
+.service-card:hover {
+  transform: scale(1.07);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.service-card h3 {
+  font-size: 22px;
+  color: #d6336c;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  font-size: 16px;
   color: #555;
-  text-align: left;
-  line-height: 1.8;
 }
 
-/* About Section */
 #about {
   background: #fff9db;
-  padding: 60px 20px;
+  padding: 80px 20px;
   text-align: center;
 }
 
 .about-heading {
-  font-size: 32px;
+  font-size: 36px;
   margin-bottom: 40px;
   color: #444;
 }
 
 .skills-container {
   display: flex;
-  justify-content: center;
-  gap: 60px;
-  flex-wrap: wrap;
-  margin-bottom: 40px;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
 }
 
 .skills-container h3 {
@@ -213,54 +248,39 @@ nav a:hover {
   margin-bottom: 15px;
 }
 
-.skills-container ul {
-  font-size: 18px;
-  color: #444;
-  line-height: 1.8;
-  text-align: left;
+.skill-bar {
+  width: 80%;
+  background-color: #ddd;
+  border-radius: 30px;
+  overflow: hidden;
+  margin-bottom: 15px;
 }
 
-.circle-chart {
-  width: 260px;
-  height: 260px;
-  border-radius: 50%;
-  margin: auto;
-  background: conic-gradient(
-    #00c6ff 0% 20%,
-    #26a69a 20% 40%,
-    #ffa726 40% 60%,
-    #8e24aa 60% 80%,
-    #ec407a 80% 100%
-  );
-  position: relative;
-}
-
-.circle-chart span {
-  position: absolute;
-  width: 80px;
-  font-size: 14px;
+.skill-bar-fill {
+  height: 20px;
+  width: 0;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  text-align: right;
+  line-height: 20px;
+  padding-right: 10px;
   color: white;
-  font-weight: bold;
-  text-align: center;
+  border-radius: 30px;
+  animation: fillBars 2s forwards;
 }
 
-.slice1 span { top: 10px; left: 90px; }
-.slice2 span { top: 40px; left: 160px; }
-.slice3 span { top: 110px; left: 200px; }
-.slice4 span { top: 190px; left: 140px; }
-.slice5 span { top: 200px; left: 30px; }
-.slice6 span { top: 110px; left: 0px; }
+@keyframes fillBars {
+  to { width: var(--skill-level); }
+}
 
-/* Contact Section */
 #contact {
   background: #1f1f1f;
   color: white;
-  padding: 60px 20px;
+  padding: 80px 20px;
   text-align: center;
 }
 
 .contact-heading {
-  font-size: 32px;
+  font-size: 36px;
   margin-bottom: 30px;
 }
 
@@ -276,13 +296,14 @@ nav a:hover {
 .contact-item a {
   color: #4fc3f7;
   text-decoration: none;
+  transition: all 0.3s;
 }
 
 .contact-item a:hover {
   text-decoration: underline;
+  color: #81d4fa;
 }
 
-/* Footer */
 footer {
   background: #00bcd4;
   color: white;
@@ -301,4 +322,9 @@ footer {
 
 .footer-links a:hover {
   color: #222;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
