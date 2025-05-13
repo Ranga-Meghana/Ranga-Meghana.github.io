@@ -1,19 +1,26 @@
 <!DOCTYPE html>
+<html>
   <head>
-    <title>Login Form</title>
+    <title>Login Form with Calculator</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="login-container">
       <h2>LOGIN FORM</h2>
       <input type="email" id="email" placeholder="Enter your email" /><br />
-      <input
-        type="password"
-        id="password"
-        placeholder="Enter your password"/><br />
+      <input type="password" id="password" placeholder="Enter your password" /><br />
       <button onclick="showCredentials()">Submit</button>
       <hr />
       <div id="output"></div>
+    </div>
+
+    <div class="calculator-container">
+      <h2>CALCULATOR</h2>
+      <input type="number" id="num1" placeholder="Enter first number"><br />
+      <input type="number" id="num2" placeholder="Enter second number"><br />
+      <button onclick="calculate()">Submit</button>
+      <hr />
+      <div id="result"></div>
     </div>
 
     <script src="script.js"></script>
