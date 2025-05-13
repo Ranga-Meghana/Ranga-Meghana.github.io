@@ -1,41 +1,26 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  transition: background-color 0.3s ease, width 0.3s ease;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-body {
-  background-color: rosybrown;
-  width: 100%;
-}
-
-@media only screen and (min-width: 600px) {
-  body {
-    background-color: pink;
-    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
   }
-}
 
-@media only screen and (min-width: 1000px) {
-  body {
-    background-color: thistle;
-    width: 60%;
-  }
-}
 
-@media only screen and (min-width: 1400px) {
-  body {
-    background-color: lavender;
-    width: 50%;
+
+   
+  @media only screen and (max-width: 600px) {
+    body {
+      background-color:rgb(79, 12, 12);
+      width: 100%;
+    }
   }
-}
+  @media only screen and (min-width: 600px) {
+    body {
+      background-color: rgb(123, 72, 81);
+      width: 50%;
+    }
+  }
+  @media only screen and (min-width: 1000px) {
+    body {
+      background-color: thistle;
+      width: 25%;
+    }
+  }
