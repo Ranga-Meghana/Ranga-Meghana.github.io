@@ -85,3 +85,24 @@ hr {
   color: #f1f1f1;
   word-wrap: break-word;
 }
+
+calculator-container {
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.calc-inner {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.calc-inputs {
+  flex: 1;
+}
+
+#result {
+  flex: 1;
+}
