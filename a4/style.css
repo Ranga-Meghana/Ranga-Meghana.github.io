@@ -14,7 +14,7 @@ body {
 
 .form-box {
   background: #fff;
-  padding: 30px 40px;
+  padding: 10px 40px;
   border-radius: 10px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   width: 400px;
@@ -112,3 +112,14 @@ a {
   border: 1px solid #ccc;
   border-radius: 6px;
 }
+.facebook-logo {
+  position: fixed;
+  top: 10px; 
+  left: 50%;
+  transform: translateX(-50%); 
+  font-size: 48px;
+  color: #1877f2;
+  font-weight: bold;
+  font-family: 'Segoe UI', sans-serif;
+}
+
