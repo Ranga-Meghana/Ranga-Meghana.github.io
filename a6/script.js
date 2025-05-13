@@ -1,27 +1,44 @@
 function showCredentials() {
-  const email = document.getElementById('email').value;
-  const password = document.getElementById('password').value;
-  document.getElementById('output').innerHTML = `Email: ${email}<br>Password: ${password}`;
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  const outputDiv = document.getElementById("output");
+  outputDiv.innerHTML = `
+    <strong>Email:</strong> ${email}<br>
+    <strong>Password:</strong> ${password}
+  `;
+}
+
+function add(a, b) {
+  return a + b;
+}
+
+function subtract(a, b) {
+  return a - b;
+}
+
+function multiply(a, b) {
+  return a * b;
+}
+
+function divide(a, b) {
+  return b !== 0 ? (a / b).toFixed(2) : "Infinity";
 }
 
 function calculate() {
-  const num1 = parseFloat(document.getElementById('num1').value);
-  const num2 = parseFloat(document.getElementById('num2').value);
+  const num1 = parseFloat(document.getElementById("num1").value);
+  const num2 = parseFloat(document.getElementById("num2").value);
+  const resultDiv = document.getElementById("result");
 
   if (isNaN(num1) || isNaN(num2)) {
-    document.getElementById('result').innerHTML = "Please enter valid numbers.";
+    resultDiv.innerHTML = `<strong style="color: yellow;">Please enter both numbers correctly.</strong>`;
     return;
   }
 
-  const addition = num1 + num2;
-  const subtraction = num1 - num2;
-  const multiplication = num1 * num2;
-  const division = num2 !== 0 ? (num1 / num2).toFixed(2) : "Infinity";
-
-  document.getElementById('result').innerHTML = `
-    Addition: ${addition}<br>
-    Subtraction: ${subtraction}<br>
-    Multiplication: ${multiplication}<br>
-    Division: ${division}
+  resultDiv.innerHTML = `
+    <strong>Addition:</strong> ${add(num1, num2)}<br>
+    <strong>Subtraction:</strong> ${subtract(num1, num2)}<br>
+    <strong>Multiplication:</strong> ${multiply(num1, num2)}<br>
+    <strong>Division:</strong> ${divide(num1, num2)}
   `;
 }
