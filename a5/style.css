@@ -8,13 +8,13 @@ body {
    
   @media only screen and (max-width: 600px) {
     body {
-      background-color:rgb(79, 12, 12);
+      background-color:rgb(129, 47, 47);
       width: 100%;
     }
   }
   @media only screen and (min-width: 600px) {
     body {
-      background-color: rgb(123, 72, 81);
+      background-color: rgb(123, 73, 81);
       width: 50%;
     }
   }
