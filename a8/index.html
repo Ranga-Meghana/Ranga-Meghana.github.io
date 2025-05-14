@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Fruit Filter</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
-    <input type="text" id="searchInput" placeholder="Search..." />
-    <button onclick="filterFruits()">Search</button>
-
+    <h1>🍓 Fruit Finder</h1>
+    <input type="text" id="searchInput" placeholder="Type to filter fruits..." />
     <ul id="fruitList">
-      <li>Apple</li>
-      <li>Orange</li>
-      <li>Mango</li>
-      <li>Banana</li>
+  <li>Apple</li>
+  <li>Orange</li>
+  <li>Mango</li>
+  <li>Banana</li>
+  <li>Pineapple</li>
+  <li>Strawberry</li>
+  <li>Blueberry</li>
+  <li>Watermelon</li>
+</ul>
+
+<p id="noResults" style="display: none; color: red; margin-top: 10px;">🍒 Fruit not found!</p>
+
     </ul>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>

@@ -1,24 +1,20 @@
-const fruits = ["Apple", "Orange", "Mango", "Banana"];
+const searchInput = document.getElementById("searchInput");
+const fruitList = document.getElementById("fruitList");
+const fruits = Array.from(fruitList.getElementsByTagName("li"));
+const noResults = document.getElementById("noResults");
+
+searchInput.addEventListener("input", filterFruits);
 
 function filterFruits() {
-  const input = document.getElementById("searchInput").value.toLowerCase();
-  const filtered = fruits.filter(fruit => fruit.toLowerCase().includes(input));
+  const filter = searchInput.value.toLowerCase();
+  let matches = 0;
 
-  const list = document.getElementById("fruitList");
-  list.innerHTML = "";
+  fruits.forEach((fruit) => {
+    const text = fruit.textContent.toLowerCase();
+    const match = text.includes(filter);
+    fruit.style.display = match ? "block" : "none";
+    if (match) matches++;
+  });
 
-  if (filtered.length === 0) {
-    const li = document.createElement("li");
-    li.textContent = "❌ Fruit not available";
-    li.style.color = "red";
-    li.style.fontWeight = "bold";
-    list.appendChild(li);
-  } else {
-    filtered.forEach(fruit => {
-      const li = document.createElement("li");
-      li.textContent = fruit;
-      li.style.fontWeight = "bold";
-      list.appendChild(li);
-    });
-  }
+  noResults.style.display = matches === 0 ? "block" : "none";
 }
