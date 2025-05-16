@@ -1,62 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Create a New Account</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-
-  <div class="facebook-logo">
-    Facebook
-  </div>
-
-  <div class="form-wrapper">
-    <div class="form-box">
-      <h2>Create a new account</h2>
-      <p>It's quick and easy.</p>
-
-      <form>
-        <div class="input-row">
-          <input type="text" placeholder="First name" required>
-          <input type="text" placeholder="Last name" required>
-        </div>
-
-        <div class="input-row">
-          <input type="text" placeholder="Surname" required>
-        </div>
-        
-        <label>Date of birth</label>
-        <div class="input-row">
-          <select id="daySelect" required></select>
-          <select id="monthSelect" required></select>
-          <select id="yearSelect" required></select>
-        </div>
-
-        <label>Gender</label>
-        <div class="radio-row">
-          <label><input type="radio" name="gender" value="Female"> Female</label>
-          <label><input type="radio" name="gender" value="Male"> Male</label>
-          <label><input type="radio" name="gender" value="Custom" id="customGender"> Custom</label>
-        </div>
-
-        <div id="customPronounBox"></div>
-
-        <div class="input-full">
-          <input type="text" placeholder="Mobile number or email address" required>
-        </div>
-
-        <div class="input-full">
-          <input type="password" placeholder="New password" required>
-        </div>
-
-        <button type="submit">Sign Up</button>
-      </form>
-
-      <a href="#">Already have an account?</a>
+    <div id="d1">
+        <h1>FACEBOOK</h1>
     </div>
+
+    <div id="p1">
+        <div class="container">
+            <h2>Create a new account</h2>
+            <h6 style="color: gray;">It's quick and easy.</h6>
+            <hr>
+            <form>
+                <p><input type="text" placeholder="First Name">
+                <input type="text" placeholder="Surname"></p>
+                <h4><div class="dob-container">
+  <label for="dob-day" style="color: gray;">Date of birth ? 
+  </label>
+  <div class="select-group">
+    <select id="dob-day"></select>
+    <select id="dob-month"></select>
+    <select id="dob-year"></select>
   </div>
 
-  <script src="script.js"></script>
+                <h4 style="color: gray;">Gender?</h4>
+                <div class="gender-type">
+                    <label class="gender-box"><input type="radio" name="gender" class="gender">Male</label>
+                    <label class="gender-box"><input type="radio" name="gender" class="gender">Female</label>
+                                <label class="gender-box"><input type="radio" name="gender">Custom</label>
+                </div>
+            <p><input type="number" class="email" placeholder="Mobile Number or email address"></p>
+            <p><input type="password" class="password" placeholder="Password"></p>
+            <p>
+                <h5 style="color: gray;">
+                    <p>People who use our service may have uploaded your contact information to Facebook.Learn more.</p>
+        By clicking Sign Up, you agree to our Terms, Privacy Policy and Cookies Policy. You may receive SMS notifications from us and can opt out at any time.
+                </h5>
+            </p>
+            <button><strong>Sign Up</strong></button> <br><br>
+            <a href="">Already have an account?</a>
+            </form>
+        </div>
+    </div>
+     <script src="script.js"></script>
 </body>
 </html>
