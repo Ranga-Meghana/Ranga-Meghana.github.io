@@ -68,21 +68,37 @@
   </style>
 </head>
 <body>
-  <h1>🛍️Product Collection</h1>
+  <h1>🛍️ Product Collection</h1>
 
-  <section class="product-grid">
-    <div class="card">
-      <h2>Product 1</h2>
-      <p>Price: 34</p>
-    </div>
-    <div class="card">
-      <h2>Product 2</h2>
-      <p>Price: 56</p>
-    </div>
-    <div class="card">
-      <h2>Product 3</h2>
-      <p>Price: 40</p>
-    </div>
+  <section id="product-grid" class="product-grid">
   </section>
+
+  <script>
+    const products = [
+      { id: 1, name: "Product 1", price: 34 },
+      { id: 2, name: "Product 2", price: 56 },
+      { id: 3, name: "Product 3", price: 40 },
+    ];
+    const updatedProducts = products.map(product => ({
+      name: product.name,
+      price: product.price + 5,
+    }));
+
+    updatedProducts.sort((a, b) => a.price - b.price);
+
+    const productGrid = document.getElementById('product-grid');
+
+    updatedProducts.forEach(product => {
+      const card = document.createElement('div');
+      card.className = 'card';
+
+      card.innerHTML = `
+        <h2>${product.name}</h2>
+        <p>Price: ₹${product.price}</p>
+      `;
+
+      productGrid.appendChild(card);
+    });
+  </script>
 </body>
 </html>
