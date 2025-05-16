@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Odd Numbers - HTML</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: radial-gradient(circle at top left, #1f1c2c, #928dab);
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      text-shadow: 0 0 8px #ffffffcc;
+      letter-spacing: 2px;
+      animation: fadeInDown 1s ease-out forwards;
+    }
+
+    #html-output {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .odd-number {
+      background: linear-gradient(135deg, #6a3093, #a044ff);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #fff;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      animation: fadeInUp 0.5s ease forwards;
+    }
+
+    .odd-number:hover {
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: 0 0 20px #ffffff66;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0px);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        transform: translateY(-20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0px);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h2>Print Odd Numbers between 1 to 10</h2>
+  <div id="html-output"></div>
+
+  <script>
+    const container = document.getElementById("html-output");
+    let delay = 0;
+
+    for (let i = 1; i <= 10; i++) {
+      if (i % 2 !== 0) {
+        const num = document.createElement("div");
+        num.className = "odd-number";
+        num.textContent = i;
+
+        num.style.animationDelay = `${delay}s`;
+        delay += 0.2;
+
+        container.appendChild(num);
+      }
+    }
+  </script>
+</body>
+</html>
