@@ -1,27 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-  <h1>Calculator</h1>
-  <input type="number" id="n1" placeholder="Enter 1st number">
-  <input type="number" id="n2" placeholder="Enter 2nd number">
-<br><br>
-  <div>
-    <button onclick="calculate('+')">+</button>
-    <button onclick="calculate('-')">-</button>
-    <button onclick="calculate('*')">x</button>
-    <button onclick="calculate('/')">÷</button>
-  </div>
-
-  <div id="result"></div>
-</div>
-
+<html>
+  <head>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="calculator-container">
+      <h2>CALCULATOR</h2>
+      <div class="calc-inner">
+        <div class="calc-inputs">
+          <input type="number" id="num1" placeholder="Enter first number" /><br />
+          <input type="number" id="num2" placeholder="Enter second number" /><br />
+          <button onclick="calculate()">Calculate</button>
+          <button onclick="dispResult()">Show Result</button>
+          <button onclick="hideResult()">Hide Result</button>
+        </div>
+        <div id="resultDiv" class="result-container">
+          <p id="dvAdd"></p>
+          <p id="dvSubtract"></p>
+          <p id="dvMultiply"></p>
+          <p id="dvDivide"></p>
+        </div>
+      </div>
+    </div>
     <script src="script.js"></script>
-</body>
+    </div>
+    </body>
 </html>

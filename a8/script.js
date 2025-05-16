@@ -1,20 +1,26 @@
-const searchInput = document.getElementById("searchInput");
-const fruitList = document.getElementById("fruitList");
-const fruits = Array.from(fruitList.getElementsByTagName("li"));
-const noResults = document.getElementById("noResults");
+const calculate = (operator) => {
+  const num1 = parseFloat(document.getElementById("n1").value);
+  const num2 = parseFloat(document.getElementById("n2").value);
+  let result;
 
-searchInput.addEventListener("input", filterFruits);
+  if (isNaN(num1) || isNaN(num2)) {
+    result = "enter valid numbers.";
+  } else {
+    switch (operator) {
+      case '+':
+        result = `Addition: ${num1 + num2}`;
+        break;
+      case '-':
+        result = `Subtraction: ${num1 - num2}`;
+        break;
+      case '*':
+        result = `Multiplication: ${num1 * num2}`;
+        break;
+      case '/':
+        result = num2 !== 0 ? `Division: ${num1 / num2}` : "Cannot divide by zero.";
+        break;
+    }
+  }
 
-function filterFruits() {
-  const filter = searchInput.value.toLowerCase();
-  let matches = 0;
-
-  fruits.forEach((fruit) => {
-    const text = fruit.textContent.toLowerCase();
-    const match = text.includes(filter);
-    fruit.style.display = match ? "block" : "none";
-    if (match) matches++;
-  });
-
-  noResults.style.display = matches === 0 ? "block" : "none";
-}
+  document.getElementById("result").innerText = result;
+};

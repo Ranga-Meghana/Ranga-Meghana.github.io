@@ -1,29 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Fruit Filter</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>🍓 Fruit Finder</h1>
-    <input type="text" id="searchInput" placeholder="Type to filter fruits..." />
-    <ul id="fruitList">
-  <li>Apple</li>
-  <li>Orange</li>
-  <li>Mango</li>
-  <li>Banana</li>
-  <li>Strawberry</li>
-  <li>Blueberry</li>
-  <li>Watermelon</li>
-</ul>
-
-<p id="noResults" style="display: none; color: red; margin-top: 10px;">🍒 Fruit not found!</p>
-
-    </ul>
+    <div class="container">
+  <h1>Calculator</h1>
+  <input type="number" id="n1" placeholder="Enter 1st number">
+  <input type="number" id="n2" placeholder="Enter 2nd number">
+<br><br>
+  <div>
+    <button onclick="calculate('+')">+</button>
+    <button onclick="calculate('-')">-</button>
+    <button onclick="calculate('*')">x</button>
+    <button onclick="calculate('/')">÷</button>
   </div>
-  <script src="script.js"></script>
+
+  <div id="result"></div>
+</div>
+
+    <script src="script.js"></script>
 </body>
 </html>
