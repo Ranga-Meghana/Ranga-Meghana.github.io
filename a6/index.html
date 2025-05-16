@@ -12,5 +12,20 @@
       <button onclick="showCredentials()">Submit</button>
       <hr />
       <div id="output"></div>
+    </div>
+
+    <script>
+      function showCredentials() {
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        const output = document.getElementById("output");
+
+        if (email && password) {
+          output.innerHTML = `<strong>Email:</strong> ${email}<br><strong>Password:</strong> ${password}`;
+        } else {
+          output.innerHTML = `<span style="color: #ff6b6b;">Please fill in all fields.</span>`;
+        }
+      }
+    </script>
   </body>
 </html>
