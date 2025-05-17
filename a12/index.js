@@ -6,10 +6,10 @@ const products = [
 
 products.sort((a, b) => a.price - b.price);
 
-console.log("🛍️ Meghana's Product List:\n");
+console.log("Product List:\n");
 
-products.forEach(product => {
-  console.log(`🔹 ${product.name} — ₹${product.price}`);
+products.forEach(p => {
+  console.log(`${p.name} - ₹${p.price}`);
 });
 
-console.log("\n✨ Total Products:", products.length);
+console.log(`\nTotal Products: ${products.length}`);
