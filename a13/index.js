@@ -4,29 +4,29 @@ const products = [
   { id: 3, name: "Product 3", price: 40, status: "pending", quantity: 4 },
 ];
 
-const updatedProducts = products.map(product => ({
-  ...product,
-  price: product.price + 5,
-  status: "completed"
-}));
-
-const filteredProducts = updatedProducts.filter(product => product.quantity > 2);
-
-console.log("🛍️ Product Update Summary (Quantity > 2):\n");
+const filteredProducts = products
+  .map(p => ({
+    ...p,
+    price: p.price + 5,
+    status: "completed"
+  }))
+  .filter(p => p.quantity > 2);
 
 let totalCost = 0;
 let totalQuantity = 0;
 
-filteredProducts.forEach(product => {
-  const productTotal = product.price * product.quantity;
-  totalCost += productTotal;
-  totalQuantity += product.quantity;
+console.log("Updated Products (quantity > 2):\n");
 
-  console.log(`🔸 ${product.name}`);
-  console.log(`   🏷️ Price: ₹${product.price}`);
-  console.log(`   📦 Quantity: ${product.quantity}`);
-  console.log(`   💰 Total: ₹${productTotal}\n`);
+filteredProducts.forEach(p => {
+  const productTotal = p.price * p.quantity;
+  totalCost += productTotal;
+  totalQuantity += p.quantity;
+
+  console.log(`${p.name}`);
+  console.log(`Price   : ₹${p.price}`);
+  console.log(`Qty     : ${p.quantity}`);
+  console.log(`Subtotal: ₹${productTotal}\n`);
 });
 
-console.log(`📦 Total Quantity: ${totalQuantity}`);
-console.log(`💰 Total Cost: ₹${totalCost}`);
+console.log(`Total Quantity: ${totalQuantity}`);
+console.log(`Total Cost    : ₹${totalCost}`);
