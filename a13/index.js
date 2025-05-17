@@ -1,26 +1,25 @@
 const products = [
-  { id: 1, name: "Product 1", price: 34 },
-  { id: 2, name: "Product 2", price: 56 },
-  { id: 3, name: "Product 3", price: 40 },
+  { id: 1, name: "Product 1", price: 34, status: "pending" },
+  { id: 2, name: "Product 2", price: 56, status: "pending" },
+  { id: 3, name: "Product 3", price: 40, status: "pending" },
 ];
 
-function updateProducts(productsList, priceIncrement = 5, status = "Completed") {
-  return productsList.map(product => ({
-    name: product.name,
-    price: product.price + priceIncrement,
-    status,
-  }));
-}
+const updatedProducts = products.map(product => ({
+  ...product,
+  price: product.price + 5,
+  status: "completed"
+}));
 
-const updatedProducts = updateProducts(products);
+console.log("🛍️ Product Update Summary:\n");
 
-updatedProducts.sort((a, b) => a.price - b.price);
+let totalCost = 0;
+let totalQuantity = updatedProducts.length;
 
-const averagePrice = (updatedProducts.reduce((sum, p) => sum + p.price, 0) / updatedProducts.length).toFixed(2);
-
-console.log("Updated Product Prices and Status:");
 updatedProducts.forEach(product => {
-  console.log(`🔸 ${product.name} - ₹${product.price} - Status: ${product.status}`);
+  console.log(`🔸 ${product.name}: ₹${product.price}`);
+  console.log(`✅ Status: ${product.status}\n`);
+  totalCost += product.price;
 });
-console.log(`\nTotal Products: ${updatedProducts.length}`);
-console.log(`💰 Average Price: ₹${averagePrice}`);
+
+console.log(`📦 Total Products: ${totalQuantity}`);
+console.log(`💰 Total Cost: ₹${totalCost}`);
