@@ -1,0 +1,100 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #ffd6e8, #d0f0ff);
+  color: #5c5c7a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  transition: all 0.4s ease-in-out;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(12px);
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  width: 340px;
+  border: 2px dashed #ffb6c1;
+  transition: all 0.4s ease-in-out;
+}
+
+h1 {
+  margin-bottom: 24px;
+  color: #ff69b4;
+  font-size: 1.9rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px #ffe6f0;
+  transition: color 0.3s ease;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+input[type="email"] {
+  padding: 12px;
+  border: 2px solid #ffc0cb;
+  border-radius: 12px;
+  font-size: 16px;
+  background-color: #fff0f5;
+  color: #5c5c7a;
+  transition: all 0.3s ease;
+}
+
+input[type="email"]:focus {
+  outline: none;
+  border-color: #ff69b4;
+  box-shadow: 0 0 10px #ffc0cb70;
+  background-color: #fffafc;
+}
+
+button {
+  padding: 12px;
+  background: linear-gradient(to right, #ff9a9e, #fad0c4);
+  color: #ffffff;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 16px rgba(255, 182, 193, 0.3);
+}
+
+button:hover {
+  background: linear-gradient(to right, #fcb1c1, #ffe0e9);
+  transform: scale(1.03);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+#result {
+  margin-top: 22px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #ff6f91;
+  background-color: #fff6f9;
+  padding: 12px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 16px;
+  border-radius: 14px;
+  margin-top: 12px;
+  border-left: 4px solid #ffa3b1;
+  text-align: left;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
