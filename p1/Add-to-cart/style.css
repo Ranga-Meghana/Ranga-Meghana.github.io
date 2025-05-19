@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Outfit', sans-serif;
+}
+
+body {
+  background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 50px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #00ffc8;
+  text-shadow: 0 0 8px #00ffc8;
+}
+
+header ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+header li {
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+header li:hover {
+  color: #00ffc8;
+}
+
+.main-section {
+  display: flex;
+  flex-wrap: wrap;     
+  justify-content: center;  
+  gap: 30px;
+  padding: 40px;        
+}
+
+.product-box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(25px);
+  border-radius: 20px;
+  padding: 25px;
+  width: 260px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 25px rgba(0, 255, 200, 0.05);
+  text-align: center;
+}
+
+.product-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px rgba(0, 255, 200, 0.3);
+}
+
+.product-box h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.product-box h4 {
+  color: #00ffc8;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.product-box button {
+  background: #00ffc8;
+  color: #0f0f0f;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.product-box button:hover {
+  background: #00c8ff;
+}
+
+.qty-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 10px 0;
+}
+
+.qty-controls button {
+  background: #333;
+  border: none;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.qty-controls span {
+  font-size: 1.2rem;
+}
+
+.totalprice-box {
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #00ffc8;
+}
+
+footer {
+  margin-top: auto;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px;
+}
