@@ -27,14 +27,17 @@ header {
 
 header h1 {
   color: var(--violet);
-  font-weight: 700;
-  font-size: 2rem;
+  margin: 0;
+  font-size: 1.8rem;
 }
 
 header ul {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
 }
 
 header ul li {
@@ -65,14 +68,15 @@ header ul li:hover::after {
 }
 
 .product-box {
-  background-color: var(--white);
-  border-radius: 16px;
+  background: #ffffff;
+  border-radius: 14px;
   box-shadow: 0 10px 20px var(--light-shadow);
-  padding: 2rem 1.5rem;
+   padding: 2rem 1.5rem;
   width: 260px;
-  text-align: center;
+  min-width: 240px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid #e5e5e5;
+  text-align: center;
+  flex-shrink: 0;
 }
 
 .product-box:hover {
