@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bank ATM</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="atm-container">
+    <h1>🏦 Bank ATM</h1>
+
+    <label for="cardInput">Card Number</label>
+    <input type="text" id="cardInput" placeholder="Enter Card Number" maxlength="16"/>
+
+    <label for="pinInput">PIN</label>
+    <input type="password" id="pinInput" placeholder="Enter 4-digit PIN" maxlength="4"/>
+
+    <button onclick="handleLogin()">Submit</button>
+
+    <div class="error" id="errorMsg"></div>
+    <div class="success" id="successMsg"></div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
