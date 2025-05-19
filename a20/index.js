@@ -1,32 +1,25 @@
-const form = document.getElementById("emailForm");
-const input = document.getElementById("emailInput");
-const output = document.getElementById("result");
+async function findUser() {
+  const emailInput = document.getElementById('emailInput').value.trim();
+  const output = document.getElementById('result');
 
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
-
-  const typedEmail = input.value.trim().toLowerCase();
-  output.textContent = "Searching...";
+  if (!emailInput) {
+    output.textContent = "Please provide an email.";
+    return;
+  }
 
   try {
-    const fetchRes = await fetch("https://jsonplaceholder.typicode.com/users");
-    const userList = await fetchRes.json();
+    const res = await fetch('https://jsonplaceholder.typicode.com/users');
+    const userList = await res.json();
 
-    const found = userList.find(user => user.email.toLowerCase() === typedEmail);
+    const matchedUser = userList.find(u => u.email.toLowerCase() === emailInput.toLowerCase());
 
-    if (found) {
-      output.innerHTML = `
-        <div class="card">
-          <h3>${found.name}</h3>
-          <p>Email: ${found.email}</p>
-          <p>Company: ${found.company.name}</p>
-        </div>
-      `;
+    if (matchedUser) {
+      output.innerHTML = `<strong>Name:</strong> ${matchedUser.name}`;
     } else {
-      output.textContent = "No match found for this email.";
+      output.textContent = "No user matches that email.";
     }
   } catch (err) {
-    output.textContent = "Oops! Something went wrong.";
-    console.log("Error fetching data:", err);
+    output.textContent = "Unable to fetch user data.";
+    console.error(err);
   }
-});
+}
