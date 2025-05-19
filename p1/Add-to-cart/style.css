@@ -145,3 +145,25 @@ footer {
   gap: 30px;
   padding: 40px;
 }
+
+.empty-cart {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 50px;
+  color: #ccc;
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.product-box {
+  animation: popIn 0.3s ease-in-out;
+}

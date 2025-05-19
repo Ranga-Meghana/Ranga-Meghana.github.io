@@ -7,10 +7,21 @@ const products = [
 let cart = {};
 
 const addToCart = (id) => {
-  if (!(id in cart)) {
-    cart = { ...cart, [id]: 1 }; 
+  cart[id] = (cart[id] || 0) + 1;
+  dispCart();
+};
+
+const increaseQty = (id) => {
+  cart[id] = (cart[id] || 0) + 1;
+  dispCart();
+};
+
+const decreaseQty = (id) => {
+  if (cart[id]) {
+    cart[id]--;
+    if (cart[id] === 0) delete cart[id];
   }
-  console.log(cart);
+  dispCart();
 };
 
 const dispCart = () => {
@@ -41,27 +52,27 @@ const dispCart = () => {
 
   root.innerHTML = str
     ? `
+      <h2>Cart</h2>
       <div class="row">${str}</div>
       <div class="totalprice-box">
         <h3>Total order price: $${Totalprice}</h3>
+        <h4 id="orderValue"></h4>
+        <button onclick="showProducts()">Continue Shopping</button>
       </div>
     `
     : "<p>Your cart is empty.</p>";
+
+  dispOrderValue();
 };
 
-
-
-const increaseQty = (id) => {
-  cart[id] = (cart[id] || 0) + 1;
-  dispCart();
-};
-
-const decreaseQty = (id) => {
-  if (cart[id]) {
-    cart[id]--;
-    if (cart[id] === 0) delete cart[id];
+const dispOrderValue = () => {
+  const grandTotal = products.reduce((sum, value) => {
+    return sum + value.price * (cart[value.id] || 0);
+  }, 0);
+  const orderValueElem = document.getElementById("orderValue");
+  if (orderValueElem) {
+    orderValueElem.innerText = `Order Value: $${grandTotal}`;
   }
-  dispCart();
 };
 
 const showProducts = () => {
@@ -75,5 +86,5 @@ const showProducts = () => {
       </div>
     `;
   });
-  root.innerHTML = "<div class='row'>" + str + "</div>";
+  root.innerHTML = "<h2>Products</h2><div class='row'>" + str + "</div>";
 };
