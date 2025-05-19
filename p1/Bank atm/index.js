@@ -17,7 +17,7 @@ function getGreeting(name) {
   if (hour >= 5 && hour < 12) timeGreeting = "Good Morning, WELCOME";
   else if (hour >= 12 && hour < 17) timeGreeting = "Good Afternoon, WELCOME";
   else if (hour >= 17 && hour < 21) timeGreeting = "Good Evening, WELCOME";
-  else timeGreeting = "Good Night";
+  else timeGreeting = "Still Awake?...WELCOME";
 
   return `${timeGreeting}, ${name}!`;
 }
