@@ -6,11 +6,18 @@ const products = [
 
 let cart = {};
 
+const showToast = (message) => {
+  const toast = document.getElementById("toast");
+  toast.textContent = message;
+  toast.className = "show";
+  setTimeout(() => {
+    toast.className = toast.className.replace("show", "");
+  }, 2000);
+};
+
 const addToCart = (id) => {
-  if (!(id in cart)) {
-    cart = { ...cart, [id]: 1 }; 
-  }
-  console.log(cart);
+  cart[id] = (cart[id] || 0) + 1;
+  showToast("Item added to cart");
 };
 
 const dispCart = () => {
@@ -27,31 +34,27 @@ const dispCart = () => {
       <div class="product-box">
         <h3>${item.name}</h3>
         <p>Price: $${item.price}</p>
-
         <div class="qty-controls">
           <button onclick='decreaseQty(${id})'>−</button>
           <span>${qty}</span>
           <button onclick='increaseQty(${id})'>+</button>
         </div>
-
         <p><strong>Value: $${total}</strong></p>
       </div>
     `;
   }
 
   root.innerHTML = str
-  ? `
-    <div class="cart-container">
-      <div class="row">${str}</div>
-      <div class="totalprice-box">
-        <h3>Total order price: $${Totalprice}</h3>
+    ? `
+      <div class="cart-container">
+        <div class="row">${str}</div>
+        <div class="totalprice-box">
+          <h3>Total order price: $${Totalprice}</h3>
+        </div>
       </div>
-    </div>
-  `
-  : "<p>Your cart is empty.</p>";
+    `
+    : "<p style='text-align:center; font-weight:bold;'>Your cart is empty.</p>";
 };
-
-
 
 const increaseQty = (id) => {
   cart[id] = (cart[id] || 0) + 1;
