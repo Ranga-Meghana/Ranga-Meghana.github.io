@@ -1,91 +1,130 @@
 * {
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(to bottom right, #e0f2fe, #f8fafc);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      margin: 0;
-      padding: 1rem;
-    }
-    h1 {
-  font-size: 1.5rem;
-  font-family: 'Times New Roman', Times, serif;
-  color: #1e7fac; 
-  margin-bottom: 1.5rem;
-  font-weight: bold;
+  box-sizing: border-box;
 }
-    .container {
-      background: #ffffff;
-      border-radius: 16px;
-      padding: 2.5rem;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-      width: 100%;
-      max-width: 500px;
-      transition: box-shadow 0.3s ease;
-      border: 1px solid #e2e8f0;
-      text-align: center;
-    }
 
-    .container:hover {
-      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.12);
-    }
+body {
+  font-family: 'Georgia', serif;
+  background: linear-gradient(to bottom right, #1f2937, #111827);
+  color: #f1f5f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 1rem;
+}
 
-    .input-group {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
+h1 {
+  font-size: 2rem;
+  font-family: 'Cinzel', serif;
+  color: #e2e8f0;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+  letter-spacing: 1px;
+}
 
-    input {
-      padding: 0.8rem 1rem;
-      border: 1px solid #cbd5e1;
-      border-radius: 12px;
-      font-size: 1rem;
-      width: 260px;
-      transition: border 0.3s ease, box-shadow 0.3s ease;
-    }
+.container {
+  background: #111827;
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  border: 1px solid #374151;
+  transition: box-shadow 0.3s ease;
+}
 
-    input:focus {
-      border-color: #43128d;
-      box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.3);
-      outline: none;
-    }
+.container:hover {
+  box-shadow: 0 24px 48px rgba(255, 255, 255, 0.05);
+}
 
-    button {
-      padding: 0.8rem 1.5rem;
-      background: linear-gradient(to right, #4a1875, #632c8e);
-      color: #fff;
-      font-weight: 600;
-      font-size: 1rem;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-      transition: background 0.3s ease, transform 0.2s ease;
-    }
+.input-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
 
-    button:hover {
-      background: linear-gradient(to right, #801586, #63148b);
-      transform: translateY(-2px);
-    }
+input {
+  padding: 0.8rem 1rem;
+  border: 1px solid #475569;
+  background-color: #1e293b;
+  color: #f8fafc;
+  border-radius: 12px;
+  font-size: 1rem;
+  width: 260px;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
 
-    .result {
-      font-size: 1.25rem;
-      font-family: 'Times New Roman', Times, serif;
-      font-weight: 600;
-      color: #1e293b;
-      margin-top: 1rem;
-    }
+input::placeholder {
+  color: #94a3b8;
+}
 
-    .error {
-      color: #ef4444;
-      font-size: 1rem;
-      font-weight: 500;
-      margin-top: 1rem;
-    }
+input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.3);
+  outline: none;
+}
+
+button {
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(to right, #4f46e5, #4338ca);
+  color: #f9fafb;
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: linear-gradient(to right, #4338ca, #312e81);
+  transform: translateY(-2px);
+}
+
+.result-card {
+  background: #1e293b;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  margin-top: 1rem;
+  text-align: left;
+  animation: fadeIn 0.4s ease-in-out;
+  border: 1px solid #334155;
+}
+
+.result-card h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.3rem;
+  color: #e0e7ff;
+  font-family: 'Cinzel', serif;
+}
+
+.result-card p {
+  margin: 0.2rem 0;
+  font-size: 1rem;
+  color: #cbd5e1;
+  font-weight: 500;
+}
+
+.error {
+  color: #f87171;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 1rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
