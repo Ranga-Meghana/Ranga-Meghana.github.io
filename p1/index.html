@@ -1,115 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ranga Meghana Maddirala | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+    }
+    header {
+      background-color: #1f1f2e;
+      color: white;
+      padding: 1rem;
+    }
+    header h1 {
+      font-size: 2rem;
+    }
+    .navbar-nav .nav-link {
+      color: white !important;
+    }
+    .Summary img {
+      max-width: 100%;
+      height: auto;
+    }
+    .skill-bar {
+      background-color: #e0e0e0;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+    .skill-bar-fill {
+      padding: 0.5rem;
+      background-color: #5f27cd;
+      color: white;
+      text-align: center;
+      width: var(--skill-level);
+    }
+    footer {
+      background-color: #1f1f2e;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+  </style>
 </head>
 <body>
-
-  <header>
-    <h1>Ranga Meghana Maddirala</h1>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+  <header class="d-flex flex-wrap justify-content-between align-items-center">
+    <h1 class="ms-3">Ranga Meghana Maddirala</h1>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
     </nav>
   </header>
 
-  <section id="home" class="container">
-    <div class="Summary">
-      <h1>Hello, I’m Ranga Meghana</h1>
-      <p>I’m a passionate cybersecurity and AI enthusiast who believes in the power of tech to solve real-world problems. Currently pursuing B.Tech in CSE (Cyber Security Specialization).</p>
-      <a href="#projects"><button class="btn">View My Work</button></a>
-    </div>
-    <div class="box">
-      <img src="robot.jpg" alt="Ranga Meghana Photo" />
+  <section id="home" class="container my-5">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <h1>Hello, I’m Ranga Meghana</h1>
+        <p>I’m a passionate cybersecurity and AI enthusiast who believes in the power of tech to solve real-world problems. Currently pursuing B.Tech in CSE (Cyber Security Specialization).</p>
+        <a href="#projects" class="btn btn-dark mt-3">View My Work</a>
+      </div>
+      <div class="col-md-6 text-center">
+        <img src="robot.jpg" alt="Ranga Meghana Photo" class="img-fluid rounded">
+      </div>
     </div>
   </section>
 
-  <section id="projects">
-        <h2 class="projects-heading">Projects</h2>
-        <div class="projects-container">
-          <div class="project-card">
-            <h3>Project 1</h3>
-            <p>Food-mart</p>
-            <a href="../food-mart/index.html" class="project-link">View Project</a>
-          </div>
-          <div class="project-card">
-            <h3>Project 2</h3>
-            <p>Add to Cart(webpage)</p>
-            <a href="Add-to-cart" class="project-link">View Project</a>
-          </div>
-          <div class="project-card">
-            <h3>Project 3</h3>
-            <p>Bank ATM</p>
-            <a href="Bank atm" class="project-link">View Project</a>
+  <section id="projects" class="bg-light py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Projects</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Food-mart</h5>
+              <p class="card-text">E-commerce shopping website simulation.</p>
+              <a href="../food-mart/index.html" class="btn btn-primary">View Project</a>
+            </div>
           </div>
         </div>
-      </section>
-
-  <section id="services">
-    <h2 class="services-heading">Services</h2>
-    <div class="services-container">
-      <div class="service-card">
-        <h3>Cybersecurity</h3>
-        <p>Vulnerability testing, ethical hacking, and digital safety measures.</p>
-      </div>
-      <div class="service-card">
-        <h3>Front-end Developer</h3>
-        <p>Adept at crafting seamless, responsive, and visually compelling user experiences with expertise in front-end technologies.</p>
-      </div>
-      <div class="service-card">
-        <h3>Web Development</h3>
-        <p>Designing full-stack apps using HTML, CSS, JavaScript, Flask & MongoDB.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="about">
-    <h2 class="about-heading">About Me</h2>
-    <p style="max-width: 800px; margin: 0 auto 40px;">Hi! I’m Ranga Meghana Maddirala, a tech-savvy student from Geethanjali College of Engineering & Technology, Hyderabad. I love building projects that mix AI and security, and I’m always up for open-source contributions and learning new technologies.</p>
-    
-    <div class="skills-container">
-      <h3>Technical Skills</h3>
-      
-      <div class="skill-bar">
-        <div class="skill-bar-fill" style="--skill-level: 50%;">Python 50%</div>
-      </div>
-      <div class="skill-bar">
-        <div class="skill-bar-fill" style="--skill-level: 80%;">Java 80%</div>
-      </div>
-      <div class="skill-bar">
-        <div class="skill-bar-fill" style="--skill-level: 85%;">HTML/CSS 85%</div>
-      </div>
-      <div class="skill-bar">
-        <div class="skill-bar-fill" style="--skill-level: 70%;">MongoDB 70%</div>
+        <div class="col-md-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Add to Cart</h5>
+              <p class="card-text">Interactive shopping cart feature.</p>
+              <a href="Add-to-cart" class="btn btn-primary">View Project</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Bank ATM</h5>
+              <p class="card-text">ATM user interface simulation in web format.</p>
+              <a href="Bank atm" class="btn btn-primary">View Project</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="contact">
-    <h2 class="contact-heading">Contact Me</h2>
-    <div class="contact-container">
-      <div class="contact-item">📧 Email: <a href="mailto:x.x.xxxxxxxxxxxx@gmail.com">x.x.xxxxxxxxxxxx@gmail.com</a></div>
-      <div class="contact-item">📞 Phone: <a href="tel:xxxxxxxxxx">xxxxxxxxxx</a></div>
-      <div class="contact-item">🔗 LinkedIn: <a href="https://www.linkedin.com/in/xxxxx-xxxxxxx-xxxxxxxxx-b62942306/" target="_blank">https://www.linkedin.com/in/xxxxx-xxxxxxx-xxxxxxxxx-b62942306/</a></div>
+  <section id="services" class="container py-5">
+    <h2 class="text-center mb-4">Services</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card text-bg-dark">
+          <div class="card-body">
+            <h5 class="card-title">Cybersecurity</h5>
+            <p class="card-text">Vulnerability testing, ethical hacking, and digital safety measures.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-bg-dark">
+          <div class="card-body">
+            <h5 class="card-title">Front-end Developer</h5>
+            <p class="card-text">Crafting seamless, responsive, and visually compelling UI/UX experiences.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-bg-dark">
+          <div class="card-body">
+            <h5 class="card-title">Web Development</h5>
+            <p class="card-text">Full-stack app design using HTML, CSS, JavaScript, Flask & MongoDB.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="bg-light py-5">
+    <div class="container">
+      <h2 class="text-center">About Me</h2>
+      <p class="text-center">Hi! I’m Ranga Meghana Maddirala, a tech-savvy student from Geethanjali College of Engineering & Technology, Hyderabad. I love building projects that mix AI and security, and I’m always up for open-source contributions and learning new technologies.</p>
+      <h3 class="mt-5">Technical Skills</h3>
+      <div class="skill-bar" style="--skill-level: 50%">
+        <div class="skill-bar-fill">Python 50%</div>
+      </div>
+      <div class="skill-bar" style="--skill-level: 80%">
+        <div class="skill-bar-fill">Java 80%</div>
+      </div>
+      <div class="skill-bar" style="--skill-level: 85%">
+        <div class="skill-bar-fill">HTML/CSS 85%</div>
+      </div>
+      <div class="skill-bar" style="--skill-level: 70%">
+        <div class="skill-bar-fill">MongoDB 70%</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="container py-5">
+    <h2 class="text-center mb-4">Contact Me</h2>
+    <div class="row text-center">
+      <div class="col-md-4">
+        <p><i class="fas fa-envelope"></i> Email:<br><a href="mailto:x.x.xxxxxxxxxxxx@gmail.com">x.x.xxxxxxxxxxxx@gmail.com</a></p>
+      </div>
+      <div class="col-md-4">
+        <p><i class="fas fa-phone"></i> Phone:<br><a href="tel:xxxxxxxxxx">xxxxxxxxxx</a></p>
+      </div>
+      <div class="col-md-4">
+        <p><i class="fab fa-linkedin"></i> LinkedIn:<br><a href="https://www.linkedin.com/in/ranga-meghana-maddirala-b62942306/" target="_blank">Visit Profile</a></p>
+      </div>
     </div>
   </section>
 
   <footer>
     <p>© 2025 Ranga Meghana Maddirala</p>
-    <div class="footer-links">
-      <a href="#home">Home</a> | 
-      <a href="#projects">Projects</a> | 
-      <a href="#contact">Contact</a>
+    <div>
+      <a href="#home" class="text-light me-3">Home</a>
+      <a href="#projects" class="text-light me-3">Projects</a>
+      <a href="#contact" class="text-light">Contact</a>
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
